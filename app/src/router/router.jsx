@@ -1,4 +1,4 @@
-import { createBrowserRouter, createRoutesFromElements, Route, Router } from 'react-router-dom';
+import { createBrowserRouter, createRoutesFromElements, Route } from 'react-router-dom';
 
 import App from '../pages/Home';
 import Match from '../pages/Match';

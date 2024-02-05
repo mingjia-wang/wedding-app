@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
 import './Venue.css';
 
 function Venue({ name, location, capacity, price, url }) {

@@ -119,6 +119,8 @@ function Match() {
             filteredByLocationAndPrice = filteredByLocation;
         }
 
+        setRecommendations(filteredByLocationAndPrice);
+
 
     }
 
@@ -128,8 +130,8 @@ function Match() {
         setTimeout(() => {
             setIsLoading(false);
         }, 3000);
-        
-    }, []);
+        console.log(theme + capacity + location + budget);
+    });
 
   return (
     <>
@@ -140,7 +142,7 @@ function Match() {
             <>
                 <h3 className='match-header'>AI DO is finding the perfect venues for you...</h3>
                 <div aria-live="polite" aria-busy={isLoading}>
-                   <img src={loadingGif} className='loading-icon'></img>
+                   <img src={loadingGif} className='loading-icon' alt='loading-icon'></img>
                 </div>
             </>
             :

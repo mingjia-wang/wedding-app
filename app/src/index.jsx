@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './pages/Home';
+// import App from './pages/Home';
 import reportWebVitals from './reportWebVitals';
 import router from './router/router';
 import { RouterProvider } from 'react-router-dom';
