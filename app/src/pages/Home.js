@@ -18,7 +18,7 @@ function App() {
   }
 
   return (
-    <div className='page'>
+    <div className='home-page'>
       <div className="App">
         <h1>AI DO</h1>
         <p className='tagline'>Crafting Dream Weddings with AI Precision</p>

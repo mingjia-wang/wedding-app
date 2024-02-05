@@ -1,4 +1,4 @@
-// import './Match.css';
+import './Match.css';
 
 function Match() {
   return (
@@ -6,7 +6,7 @@ function Match() {
       <div className="Match">
         <h1>Match Page</h1>
       </div>
-      <div className='form'></div>
+      <div className='match-form'></div>
     </>
     
   );
