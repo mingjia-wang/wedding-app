@@ -22,23 +22,30 @@ function App() {
         </div>
       </div>
       <div className='form' id='form' ref={formRef}>
+        <div className='form-panel'>
         <div className='form-container'>
           <div className='input-box'>
-            <p className='question'>Question 1</p>
-            <input></input>
+            <h6 className='q-label'>Theme</h6>
+            <p className='question'>What's your dream wedding theme?</p>
+            <input type='text'></input>
           </div>
           <div className='input-box'>
-            <p className='question'>Question 2</p>
-            <input></input>
+          <h6 className='q-label'>Number of Guests</h6>
+            <p className='question'>How many people are you inviting?</p>
+            <input type='text'></input>
           </div>
           <div className='input-box'>
-            <p className='question'>Question 3</p>
-            <input></input>
+            <h6 className='q-label'>Location</h6>
+            <p className='question'>Where in Orange County?</p>
+            <input type='text'></input>
           </div>
           <div className='input-box'>
-            <p className='question'>Question 4</p>
-            <input></input>
+            <h6 className='q-label'>Budget</h6>
+            <p className='question'>What's your price range?</p>
+            <input type='text'></input>
           </div>
+        </div>
+        <button id='submit'>Let's go!</button>
         </div>
       </div>
     </div>

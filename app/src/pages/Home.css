@@ -84,22 +84,52 @@ h1 {
   justify-content: center;
 }
 
+.form-panel {
+  
+}
+
 .form-container {
   background-color: white;
-  width: 70vw;
+  width: 50vw;
   height: 50vh;
   justify-self: center;
   align-self: center;
   display: grid;
   grid-template-columns: 50% 50%;
-  grid-template-rows: 50% 50%;
+  grid-template-rows: 45% 45% 10%;
   opacity: 60%;
   border-radius: 10px;
   padding: 10px;
 }
 
 .input-box {
-  margin: auto;
+  margin-left: 30px;
+  margin-top: 70px;
   background-color: white;
   opacity: 50%;
+}
+
+.input-box h6, .input-box p {
+  margin-bottom: 10px;
+}
+
+.question {
+  color: black;
+}
+
+#submit {
+  grid-row: 3;
+  /* grid-column: 2; */
+  /* width: 100px; */
+  width: 90%;
+  height: 20px;
+  margin: auto;
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: 1px solid #615822;
+  cursor:pointer;
+  overflow: hidden; 
+  padding: 5px;
+  text-align: center;
+  border-radius: 5%;
 }
