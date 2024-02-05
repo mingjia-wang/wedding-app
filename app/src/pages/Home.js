@@ -24,23 +24,22 @@ function App() {
       <div className='form' id='form' ref={formRef}>
         <div className='form-container'>
           <div className='input-box'>
-            <p></p>
+            <p className='question'>Question 1</p>
             <input></input>
           </div>
           <div className='input-box'>
-            <p></p>
+            <p className='question'>Question 2</p>
             <input></input>
           </div>
           <div className='input-box'>
-            <p></p>
+            <p className='question'>Question 3</p>
             <input></input>
           </div>
           <div className='input-box'>
-            <p></p>
+            <p className='question'>Question 4</p>
             <input></input>
           </div>
         </div>
-        
       </div>
     </div>
     
