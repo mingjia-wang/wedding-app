@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import { ring } from 'ldrs';
+// import { ring } from 'ldrs';
+import loadingGif from '../../../app/src/images/loader.webp';
 import Venue from '../components/Venue';
 import './Match.css';
 
@@ -65,7 +66,7 @@ function Match() {
     ];
 
     const registerRing = () => {
-        ring.register('loading-icon');
+        // ring.register('loading-icon');
     };
 
     const findVenues = () => {
@@ -139,7 +140,7 @@ function Match() {
             <>
                 <h3 className='match-header'>AI DO is finding the perfect venues for you...</h3>
                 <div aria-live="polite" aria-busy={isLoading}>
-                    <loading-icon></loading-icon>
+                   <img src={loadingGif} className='loading-icon'></img>
                 </div>
             </>
             :
