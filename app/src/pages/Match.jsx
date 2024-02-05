@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 // import { ring } from 'ldrs';
-import loadingGif from '../../../app/src/images/loader.webp';
+import loadingGif from '../images/loader.webp';
 import Venue from '../components/Venue';
 import './Match.css';
 
@@ -105,21 +105,15 @@ function Match() {
             setRecommendations(filteredByLocation);
         }
 
-        if (budgetParam !== '') {
+        if (budgetParam !== '' && locationParam !== '') {
             filteredByLocationAndPrice = filteredByLocation.filter(v => {
-                if (v.price <= budgetParam) {
-                    console.log('keeping ' + v.name);
-                    return true;
-                } else {
-                    console.log('tossing ' + v.name);
-                    return false;
-                }
+                return v.location === locationParam && v.price <= budgetParam;
+                
             });
-        } else {
-            filteredByLocationAndPrice = filteredByLocation;
+            setRecommendations(filteredByLocationAndPrice);
         }
 
-        setRecommendations(filteredByLocationAndPrice);
+        
 
 
     }
