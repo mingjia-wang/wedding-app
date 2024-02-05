@@ -14,22 +14,53 @@ function Match() {
 
     const options = [
             {
+                name: 'Pacific View Tower',
+                location: 'Ventura',
+                capacity: 250,
+                price: 2295,
+                url: 'https://www.wedgewoodweddings.com/pacificviewtower'
+            },
+            {
+                name: 'Carlsbad Windmill',
+                location: 'Carlsbad',
+                capacity: 200,
+                price: 995,
+                url: 'https://www.wedgewoodweddings.com/goldengateclub'
+            },
+            {
                 name: 'La Jolla Cove Rooftop',
                 location: 'La Jolla',
                 capacity: 200,
-                price: 1995
+                price: 1995,
+                url: 'https://www.wedgewoodweddings.com/lajollacoverooftop-1'
             },
             {
                 name: 'Winchester Estate',
                 location: 'Meadow Vista',
                 capacity: 150,
-                price: 5895
+                price: 5895,
+                url: 'https://www.wedgewoodweddings.com/winchesterestate'
             },
             {
                 name: 'The Sanctuary',
                 Location: 'Long Beach',
                 capacity: 300,
-                price: 4495
+                price: 4495,
+                url: 'https://www.wedgewoodweddings.com/sanctuary'
+            },
+            {
+                name: 'La Ventura',
+                location: 'San Clemente',
+                capacity: 500,
+                price: 6000,
+                url: 'https://laventuraeventcenter.com/wedding-venue/?gad_source=1&gclid=CjwKCAiAq4KuBhA6EiwArMAw1P-UGd0QDZ4DIK7w8c2UX4jkvx9KXYCUOXPYc1B3vuYKUZrRPdLgFRoCD0cQAvD_BwE'
+            },
+            {
+                name: 'Bel Vino Winery',
+                location: 'Temecula',
+                capacity: 200,
+                price: 2695,
+                url: 'https://www.wedgewoodweddings.com/venues/southern-california/belvino-winery'
             }
     ];
 
@@ -38,6 +69,8 @@ function Match() {
     };
 
     const findVenues = () => {
+        let filteredByLocation = options;
+        let filteredByLocationAndPrice = options;
         const queryParameters = new URLSearchParams(window.location.search);
         const themeParam = queryParameters.get('theme');
         const capacityParam = queryParameters.get('capacity');
@@ -51,7 +84,41 @@ function Match() {
         setCapacity(capacityParam);
         setLocation(locationParam);
         setBudget(budgetParam);
-        setRecommendations(options);
+        
+        if (locationParam !== '') {
+            const filteredByLocation = options.filter(v => {
+                if (v.location === locationParam) {
+                    console.log('keeping ' + v.name);
+                    return true;
+                } else {
+                    console.log('tossing ' + v.name);
+                    return false;
+                }
+            });
+
+            console.log('options after location filter:');
+            console.log(filteredByLocation);
+            setRecommendations(filteredByLocation);
+        } else {
+            const filteredByLocation = options;
+            setRecommendations(filteredByLocation);
+        }
+
+        if (budgetParam !== '') {
+            filteredByLocationAndPrice = filteredByLocation.filter(v => {
+                if (v.price <= budgetParam) {
+                    console.log('keeping ' + v.name);
+                    return true;
+                } else {
+                    console.log('tossing ' + v.name);
+                    return false;
+                }
+            });
+        } else {
+            filteredByLocationAndPrice = filteredByLocation;
+        }
+
+
     }
 
     useEffect(() => {
@@ -59,7 +126,7 @@ function Match() {
         findVenues();
         setTimeout(() => {
             setIsLoading(false);
-        }, 5000);
+        }, 3000);
         
     }, []);
 
@@ -81,7 +148,7 @@ function Match() {
                 <div className='venue-list'>
                    {
                     recommendations.map(v => {
-                        return <Venue />
+                        return <Venue name={v.name} location={v.location} capacity={v.capacity} price={v.price} url={v.url}/>
                     })
                    }
                 </div>
