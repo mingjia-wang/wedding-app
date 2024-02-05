@@ -17,6 +17,10 @@ function App() {
     });
   }
 
+  const generateMatchURL = () => {
+    return `/match?theme=${theme}&capacity=${capacity}&location=${location}&budget=${budget}`;
+  };
+
   return (
     <div className='home-page'>
       <div className="App">
@@ -42,8 +46,8 @@ function App() {
             </div>
             <div className='input-box'>
               <h6 className='q-label'>Location</h6>
-              <p className='question'>Where in Orange County?</p>
-              <input type='text' onChange={(e) => {setLocation(e.target.value)}}></input>
+              <p className='question'>Where in California?</p>
+              <input type='text' onChange={(e) => {setLocation(e.target.value)}} placeholder='blank = any'></input>
             </div>
             <div className='input-box'>
               <h6 className='q-label'>Budget</h6>
@@ -52,7 +56,7 @@ function App() {
             </div>
           </div>
           <div className='button-div'>
-            <Link to='/match'><button id='submit'>Let's go!</button></Link>
+            <Link to={generateMatchURL()}><button id='submit'>Let's go!</button></Link>
           </div>
         </div>
       </div>

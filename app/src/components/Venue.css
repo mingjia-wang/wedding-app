@@ -1,0 +1,8 @@
+.venue-card {
+    width: 60vw;
+    height: 100px;
+    background-color: lightblue;
+    border: none;
+    border-radius: 10px;
+    margin: 20px auto;
+}
