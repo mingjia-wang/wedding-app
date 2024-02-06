@@ -2,12 +2,15 @@ import { createBrowserRouter, createRoutesFromElements, Route } from 'react-rout
 
 import App from '../pages/Home';
 import Match from '../pages/Match';
+import Form from '../pages/Form';
 
 const router = createBrowserRouter(
     createRoutesFromElements(
         <>
             <Route path="/" element={<App/>}></Route>
-            <Route path='/match' element={<Match/>}></Route>
+            <Route path="/match" element={<Match/>}></Route>
+            <Route path="/form" element={<Form />}></Route>
+            {/* <Route path="page1" element={} */}
         </>
         
     )
