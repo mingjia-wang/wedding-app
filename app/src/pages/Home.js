@@ -37,12 +37,12 @@ function App() {
             <div className='input-box'>
               <h6 className='q-label'>Theme</h6>
               <p className='question'>What's your dream wedding theme?</p>
-              <input type='text' onChange={(e) => {setTheme(e.target.value)}}></input>
+              <input type='text' onChange={(e) => {setTheme(e.target.value)}} placeholder='blank = any'></input>
             </div>
             <div className='input-box'>
             <h6 className='q-label'>Number of Guests</h6>
               <p className='question'>How many people are you inviting?</p>
-              <input type='text' onRateChange={(e) => {setCapacity(e.target.value)}}></input>
+              <input type='text' onRateChange={(e) => {setCapacity(e.target.value)}} placeholder='blank = any'></input>
             </div>
             <div className='input-box'>
               <h6 className='q-label'>Location</h6>
