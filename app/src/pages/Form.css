@@ -9,17 +9,19 @@
   }
   
   .form-page .form-panel {
-    background-color: white;
+    /* background-color: white; */
     width: 50vw;
-    height: 50vh;
+    height: 70vh;
     justify-self: center;
     align-self: center;
     opacity: 60%;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     padding: 10px;
   }
   
   .form-page .form-container {
+    background-color: white;
+    border-radius: 10px;
     height: 90%;
     display: grid;
     grid-template-columns: 50% 50%;
@@ -58,10 +60,11 @@
     height: 30px;
     align-self: center;
     justify-self: center;
-    background-color: Transparent;
+    background-color: transparent;
     background-repeat:no-repeat;
     border: 1px solid #ccb21d;
     color: #ccb21d;
+    font-weight: 700;
     cursor:pointer;
     overflow: hidden; 
     padding: 5px;
