@@ -52,7 +52,7 @@ function App() {
             <div className='input-box'>
               <h6 className='q-label'>Budget</h6>
               <p className='question'>What's your price range?</p>
-              <input type='text' onChange={(e) => setBudget(e.target.value)}></input>
+              <input type='text' onChange={(e) => setBudget(e.target.value)} placeholder='blank = any'></input>
             </div>
           </div>
           <div className='button-div'>

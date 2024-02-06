@@ -44,7 +44,7 @@ function Match() {
             },
             {
                 name: 'The Sanctuary',
-                Location: 'Long Beach',
+                location: 'Long Beach',
                 capacity: 300,
                 price: 4495,
                 url: 'https://www.wedgewoodweddings.com/sanctuary'
@@ -65,67 +65,54 @@ function Match() {
             }
     ];
 
-    const registerRing = () => {
-        // ring.register('loading-icon');
-    };
-
     const findVenues = () => {
-        let filteredByLocation = options;
-        let filteredByLocationAndPrice = options;
         const queryParameters = new URLSearchParams(window.location.search);
-        const themeParam = queryParameters.get('theme');
-        const capacityParam = queryParameters.get('capacity');
-        const locationParam = queryParameters.get('location');
-        const budgetParam = queryParameters.get('budget');
-        console.log(themeParam);
-        console.log(capacityParam);
-        console.log(locationParam);
-        console.log(budgetParam);
-        setTheme(themeParam);
-        setCapacity(capacityParam);
-        setLocation(locationParam);
-        setBudget(budgetParam);
-        
-        if (locationParam !== '') {
-            const filteredByLocation = options.filter(v => {
-                if (v.location === locationParam) {
-                    console.log('keeping ' + v.name);
-                    return true;
-                } else {
-                    console.log('tossing ' + v.name);
-                    return false;
-                }
-            });
+        const desiredLocation = queryParameters.get('location');
+        const desiredPrice = queryParameters.get('budget');
 
-            console.log('options after location filter:');
-            console.log(filteredByLocation);
-            setRecommendations(filteredByLocation);
-        } else {
-            const filteredByLocation = options;
-            setRecommendations(filteredByLocation);
+        if (desiredLocation === '' && desiredPrice === '') {
+            console.log('case 1: recommending all options:');
+            const results = options;
+            setRecommendations(results);
         }
-
-        if (budgetParam !== '' && locationParam !== '') {
-            filteredByLocationAndPrice = filteredByLocation.filter(v => {
-                return v.location === locationParam && v.price <= budgetParam;
+        else if (desiredLocation !== '' && desiredPrice === '') {
+            console.log('case 2 - location only:');
+            const results = options.filter(v => v.location === desiredLocation);
+            console.log(results);
+            setRecommendations(results);
+        }
+        else if (desiredPrice !== '') {
+            if (desiredLocation === '') {
+                console.log('case 3 - price only:');
+                const results = options.filter(v => (v.price < Number(desiredPrice) || v.price === Number(desiredPrice)));
+                console.log(results);
+                setRecommendations(results);
+            }
+            else {
+                console.log('case 4 - both location and price:');
                 
-            });
-            setRecommendations(filteredByLocationAndPrice);
+                const results = options.filter(v => {
+                    console.log(v.name);
+                    console.log(v.location === desiredLocation);
+                console.log(v.price < Number(desiredPrice) || v.price === Number(desiredPrice));
+                console.log((v.location === desiredLocation && (v.price < Number(desiredPrice) || v.price === Number(desiredPrice))));
+                    return (v.location === desiredLocation && (v.price < Number(desiredPrice) || v.price === Number(desiredPrice)));
+                });
+                setRecommendations(results);
+            }
         }
-
-        
 
 
     }
 
     useEffect(() => {
-        registerRing();
+        // registerRing();
         findVenues();
         setTimeout(() => {
             setIsLoading(false);
         }, 3000);
-        console.log(theme + capacity + location + budget);
-    });
+        // console.log(theme + capacity + location + budget);
+    }, []);
 
   return (
     <>
