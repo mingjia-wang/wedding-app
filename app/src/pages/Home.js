@@ -2,6 +2,7 @@
 import { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
+import photo from '../images/floral-couple-bg.jpeg'
 
 function App() {
   const formRef = useRef();
@@ -24,13 +25,18 @@ function App() {
   return (
     <>
     <div className='home-page'>
-      <div className="App">
-        <h1>AI DO</h1>
-        <p className='tagline'>Crafting Dream Weddings with AI Precision</p>
-        <p className='description'>Experience stress-free wedding planning with AI Do! Our AI-driven chat platform curates personalized, budget-friendly weddings, seamlessly pairing you with the perfect vendors</p>
-        <div className='button-container'>
-          <button className='gs-button' onClick={showForm}>Get Started</button>
+      <div className="left-half">
+        <div className='left-text'>
+          <h1>AI DO</h1>
+          <p className='tagline'>Crafting Dream Weddings with AI Precision</p>
+          <p className='description'>Experience stress-free wedding planning with AI Do! Our AI-driven chat platform curates personalized, budget-friendly weddings, seamlessly pairing you with the perfect vendors</p>
+          <div className='button-container'>
+            <button className='gs-button' onClick={showForm}>Get Started</button>
+          </div>
         </div>
+      </div> 
+      <div className='right-half'>
+        <img src={photo} id='picture'></img>
       </div>
     </div>
     <div className='form-page'>
