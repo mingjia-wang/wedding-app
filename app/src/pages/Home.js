@@ -64,6 +64,8 @@ function App() {
               <option value="Carlsbad">Carlsbad</option>
               <option value="Meadow Vista">Meadow Vista</option>
               <option value="Long Beach">Long Beach</option>
+              <option value="San Clemente">San Clemente</option>
+              <option value="Temecula">Temecula</option>
             </select>
           </div>
           <div className='input-box'>
