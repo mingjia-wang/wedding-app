@@ -56,7 +56,11 @@ function App() {
           <div className='input-box'>
             <h6 className='q-label'>Location</h6>
             <p className='question'>Where in California?</p>
-            <input type='text' onChange={(e) => {setLocation(e.target.value)}} placeholder='blank = any'></input>
+            {/* <input type='text' onChange={(e) => {setLocation(e.target.value)}} placeholder='blank = any'></input> */}
+            <select onChange={(e) => {setLocation(e.target.value)}}>
+              <option value=''>Any</option>
+              <option value="La Jolla">La Jolla</option>
+            </select>
           </div>
           <div className='input-box'>
             <h6 className='q-label'>Budget</h6>
