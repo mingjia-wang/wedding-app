@@ -60,6 +60,10 @@ function App() {
             <select onChange={(e) => {setLocation(e.target.value)}}>
               <option value=''>Any</option>
               <option value="La Jolla">La Jolla</option>
+              <option value="Ventura">Ventura</option>
+              <option value="Carlsbad">Carlsbad</option>
+              <option value="Meadow Vista">Meadow Vista</option>
+              <option value="Long Beach">Long Beach</option>
             </select>
           </div>
           <div className='input-box'>
